@@ -34,20 +34,21 @@ const Trend = () => {
           {data.map((ele) => {
             if (ele.type == "상승") {
               return (
-                <Trendtext>
-                  {ele.content} <Red>▲</Red>
+                <Trendtext key={ele.id}>
+                  {ele.content} <Red>▲</Red> {Math.floor(Math.random() * 100)}
                 </Trendtext>
               );
             } else if (ele.type == "new") {
               return (
-                <Trendtext>
-                  {ele.content} <Red>new!</Red>
+                <Trendtext key={ele.id}>
+                  {ele.content} <Red>new!</Red>{" "}
                 </Trendtext>
               );
             } else {
               return (
-                <Trendtext>
-                  {ele.content} <Blue>▼</Blue>
+                <Trendtext key={ele.id}>
+                  {ele.content} <Blue>▼</Blue> {" "}
+                  {Math.floor(Math.random() * 100)}
                 </Trendtext>
               );
             }
