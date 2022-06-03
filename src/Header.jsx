@@ -23,13 +23,16 @@ const Header = () => {
 };
 
 const TitleWrap = styled.div`
-  font-family: "Ubuntu";
-
+  font-family: "NotoSansKR";
+  font-weight: 700;
   display: flex;
 `;
 
 const Title = styled.div`
   color: #5a5a5a;
+  background: linear-gradient(to right top, #434343, #595959);
+  color: transparent;
+  -webkit-background-clip: text;
   margin-left: 8px;
   font-size: 35px;
   font-weight: 700;
@@ -41,7 +44,7 @@ const HederWrap = styled.div`
 `;
 
 const MainHeader = styled.header`
-  font-family: "Ubuntu";
+  font-family: "NotoSansKR";
 
   position: sticky;
   background-color: #ffffff;
@@ -69,7 +72,9 @@ const Ul = styled.ul`
 `;
 const Li = styled.ul`
   &:hover {
-    color: #ff6f6f;
+    background: linear-gradient(to right top, #ff6f6f, #ffa459);
+    color: transparent;
+    -webkit-background-clip: text;
   }
   margin: 10px;
 `;
