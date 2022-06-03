@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <MainHeader>
       <TitleWrap>
-        <FontAwesomeIcon icon={faHeart} color="rgb(255, 168, 168)" />
+        <FontAwesomeIcon icon={faHeart} color="rgb(255, 121, 121)" />
         <Title>Seorim's portfolio</Title>
       </TitleWrap>
 
@@ -15,7 +15,7 @@ const Header = () => {
         <Ul>
           <Li>portfolio.</Li>
           <Li>My passion.</Li>
-          <Li>etc.</Li>
+          <Li>Contact.</Li>
         </Ul>
       </HederWrap>
     </MainHeader>
@@ -29,7 +29,7 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-  color: #303030;
+  color: #5a5a5a;
   margin-left: 8px;
   font-size: 35px;
   font-weight: 700;
@@ -51,7 +51,7 @@ const MainHeader = styled.header`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid #b5b5b5;
+  border-bottom: 1px solid #f5ebeb;
 
   box-shadow: 0 6px 6px 0px #dbdbdb;
 `;
@@ -68,6 +68,9 @@ const Ul = styled.ul`
   list-style: none;
 `;
 const Li = styled.ul`
+  &:hover {
+    color: #ff6f6f;
+  }
   margin: 10px;
 `;
 

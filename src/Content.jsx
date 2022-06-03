@@ -8,6 +8,7 @@ const Content = () => {
   return (
     <>
       <SearchInput />
+  
 
       <ContentWrap>
         <Trend />

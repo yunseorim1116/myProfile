@@ -3,6 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
 
+// useEffect(() => {
+//   //데이터 받기 .. 보류 경로를 못찾겠어어
+//   fetch("./data.json")
+//     .then((response) => response.json())
+//     .then((data) => console.log(data));
+// }, []);
+
 const SearchInput = () => {
   const data = [
     { id: 1, content: "깃 commit의 신", type: "상승" },
@@ -27,30 +34,46 @@ const SearchInput = () => {
   const [search, setSearch] = useState("");
 
   const [showSearchDate, setSearchData] = useState([]);
+  const [message, setMessage] = useState("");
+  const [showResultMsg, setShowResultMsg] = useState("");
 
   const hasSearchDate = () => {
+    //인풋값이 비어져있는지 검증하는 함수
     return search == "";
+  };
+  const hasShowSearchData = () => {
+    //검색 결과값이 비어져있는지 검증하는 함수
+    return showSearchDate.length == 0;
   };
 
   useEffect(() => {
-    //데이터 받기 .. 보류 경로를 못찾겠어어
-    fetch("./data.json")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
+    const check = setTimeout(() => {
+      setShowResultMsg("검색결과가 없습니다.");
+    }, 1000); //
+  }, [showResultMsg]); //검색결과가 없습니다 띄워주기
+
+  const onSearch = () => {
+    //검색을 할때마다 띄워준다.
+    setMessage("검색중입니다");
+    setTimeout(() => {
+      setMessage("");
+    }, 2000); //검색중입니다 메세지는 일단 비워준다.계속 뜨면 좀 그니까....
+  };
 
   useEffect(() => {
-    if (hasSearchDate) {
-      //인풋창 검사 ,만약에 비어있으면
-      setSearchData([]); //검색 결과들도 다 비워준다.
-    }
-
+    // if (hasSearchDate) {
+    //   //인풋창 검색어 있는지 없는지 검사 ,만약에 비어있으면
+    //   setSearchData([]); //검색 결과들도 다 비워준다.
+    // } else {
+    // }
     const debounce = setTimeout(() => {
-      //디바운싱 해주자
+      //디바운싱 해주자zzzzxzx
       const filterData = data.filter((ele) => ele.content.includes(search));
       setSearchData(filterData);
-    }, 1000); //->setTimeout 설정
-    return () => clearTimeout(debounce); //->clearTimeout 바로 타이머 제거
+    }, 100); //->setTimeout 설정
+    return () => {
+      clearTimeout(debounce); //->clearTimeout 바로 타이머 제거
+    };
   }, [search]);
 
   return (
@@ -62,22 +85,40 @@ const SearchInput = () => {
             placeholder="서림이의 재능 알아보기"
             onChange={(e) => {
               setSearch(e.target.value);
+              onSearch();
             }}
           />
-          {search &&
-            showSearchDate.map((ele) => (
-              <div>
-                <showSearch key={ele.id}>{ele.content}</showSearch>
-              </div>
-            ))}
         </ItemWrap>
         <SearchButton>
           <Button type="submit">검색</Button>
         </SearchButton>
       </SearchWrap>
+
+      <DivBox>
+        {search &&
+          !message && //일단 검색어가 있으면 그에 맞는 검색결과 리스트들을 보여준다.
+          showSearchDate.map((ele) => (
+            <DivBox>
+              <showSearch key={ele.id}>{ele.content}</showSearch>
+            </DivBox>
+          ))}
+        {search && <div>{message} </div>}
+        {hasShowSearchData() && search && !message ? ( //검색결과가 없고 && 검색은 하고 있고 && 검색중 메세지 비워져있어야해!
+          <hasNotDate>{showResultMsg}</hasNotDate>
+        ) : null}
+      </DivBox>
     </ContentBox>
   );
 };
+
+const DivBox = styled.div`
+  margin-top: 2px;
+  text-align: center;
+`;
+
+const hasNotDate = styled.p`
+  text-align: center;
+`;
 
 const showSearch = styled.span`
   padding: 10px;

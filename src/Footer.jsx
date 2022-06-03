@@ -6,10 +6,10 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 const Footer = () => {
   return (
     <>
-      <FooterTag>
+      {/* <FooterTag>
         <FontAwesomeIcon icon={faHome} />
         hhyjs2r@gmail.com
-      </FooterTag>
+      </FooterTag> */}
     </>
   );
 };
