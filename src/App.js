@@ -1,20 +1,20 @@
-import Header from "./Header";
-import Content from "./Content";
-import Footer from "./Footer";
+import MainPg from "./Component/MainPg .jsx";
+import ContactMe from "./Component/contact/ContactMe.jsx";
 import { Reset } from "styled-reset";
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import store from "./reducer/store.js";
-import ContactMe from "./Component/contact/contactMe";
 
 function App() {
   return (
     <>
-      <Header />
-      <Content />
-
-      <Footer />
-      <ContactMe />
-      <Reset />
+      {/* <MainPg /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPg />}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

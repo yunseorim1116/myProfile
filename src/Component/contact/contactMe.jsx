@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useRef, forwardRef } from "react";
+import { useContext } from "react";
+import { UserNavContext } from "../MainPg ";
+import { useState } from "react";
 
-const ContactMe = () => {
+const ContactMe = forwardRef((props, ref) => {
   const form = useRef();
+  const contact = useRef();
+  const { setPage } = useContext(UserNavContext);
+  const { page } = useContext(UserNavContext);
+
+  // console.log(setPage);
+  // console.log(useContext(UserNavContext));
+  useEffect(() => {
+    const { offsetTop } = contact.current; //좌표값구하기
+    setPage({ ...page, contactTop: offsetTop });
+  
+  }, []);
+
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -19,6 +34,7 @@ const ContactMe = () => {
       )
       .then(
         (result) => {
+          alert('메일 전송 완료!')
           console.log(result.text);
         },
         (error) => {
@@ -28,7 +44,7 @@ const ContactMe = () => {
   };
 
   return (
-    <ContactWrap>
+    <ContactWrap type="contact" ref={contact} id="contact-me">
       <Title>Contact Me</Title>
       <ContactBox>
         <form ref={form} onSubmit={sendEmail}>
@@ -51,7 +67,7 @@ const ContactMe = () => {
       </ContactBox>
     </ContactWrap>
   );
-};
+});
 
 const Msg = styled.div`
   position: relative;

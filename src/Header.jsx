@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-const Header = () => {
+import { UserNavContext } from "./Component/MainPg ";
+import { useContext } from "react";
+import { useRef } from "react";
+import ContactMe from "./Component/contact/ContactMe";
+
+const Header = ({ OnNavclick }) => {
+  const { page } = useContext(UserNavContext);
+  const contactRef = useRef();
+
+  const onClick = () => {
+    const contactMe = document.getElementById("contact-me");
+    console.log(contactMe);
+    contactMe.scrollIntoView();
+    // contactRef.current.scrollTo({
+    //   top: page.contactTop,
+    //   left: 0,
+    //   behavior: "auto",
+    // });
+  };
+
   return (
     <MainHeader>
       <TitleWrap>
@@ -15,7 +34,9 @@ const Header = () => {
         <Ul>
           <Li>portfolio.</Li>
           <Li>My passion.</Li>
-          <Li>Contact.</Li>
+          <Li ref={contactRef} onClick={onClick}>
+            Contact.
+          </Li>
         </Ul>
       </HederWrap>
     </MainHeader>
