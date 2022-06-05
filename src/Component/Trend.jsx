@@ -1,8 +1,14 @@
 import React from "react";
 
 import styled, { css } from "styled-components";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Trend = () => {
+  const navigate = useNavigate();
+  const onClick = (id) => {
+    const contactMe = document.getElementById(`${id}`);
+    contactMe.scrollIntoView({ behavior: "smooth" });
+  };
   const data = [
     { id: 1, content: "깃 commit의 신", type: "상승" },
     {
@@ -34,7 +40,13 @@ const Trend = () => {
           {data.map((ele) => {
             if (ele.type == "상승") {
               return (
-                <Trendtext key={ele.id}>
+                <Trendtext
+                  key={ele.id}
+                  onClick={() => {
+                    onClick(ele.id);
+                  }}
+                  id={ele.id}
+                >
                   {ele.content} <Red>▲</Red> {Math.floor(Math.random() * 100)}
                 </Trendtext>
               );
@@ -47,8 +59,7 @@ const Trend = () => {
             } else {
               return (
                 <Trendtext key={ele.id}>
-                  {ele.content} <Blue>▼</Blue> {" "}
-                  {Math.floor(Math.random() * 100)}
+                  {ele.content} <Blue>▼</Blue> {Math.floor(Math.random() * 100)}
                 </Trendtext>
               );
             }
@@ -82,6 +93,14 @@ const TrendTitle = styled.h1`
   font-weight: 700;
 `;
 const Trendtext = styled.li`
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(to right top, #ff1a1a, #ffa459);
+    font-weight: 600;
+    color: transparent;
+    -webkit-background-clip: text;
+    border-bottom: 2px solid;
+  }
   font-family: "NotoSansKR";
   margin-bottom: 20px;
 `;

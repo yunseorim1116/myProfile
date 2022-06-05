@@ -1,46 +1,53 @@
 import React, { useEffect } from "react";
 import styled, { css } from "styled-components";
 import emailjs from "@emailjs/browser";
-import { useRef, forwardRef } from "react";
+import { useRef } from "react";
 import { useContext } from "react";
 import { UserNavContext } from "../MainPg ";
 import { useState } from "react";
 
-const ContactMe = forwardRef((props, ref) => {
-  const form = useRef();
+const ContactMe = (props, ref) => {
+  let form = useRef();
+
   const contact = useRef();
   const { setPage } = useContext(UserNavContext);
   const { page } = useContext(UserNavContext);
 
-  // console.log(setPage);
-  // console.log(useContext(UserNavContext));
   useEffect(() => {
     const { offsetTop } = contact.current; //좌표값구하기
     setPage({ ...page, contactTop: offsetTop });
-  
   }, []);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    console.log("보내짐");
+    const { elements } = form.current;
 
-    emailjs
-      .sendForm(
-        "service_f0mxzxa",
-        "template_pna2jxo",
-        form.current,
-        "ASB7oYgf8SEBlff-g"
-      )
-      .then(
-        (result) => {
-          alert('메일 전송 완료!')
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    if (!elements.message.value) {
+      alert("내용을 제대로 입력해주세요.");
+      return;
+    } else {
+      emailjs
+        .sendForm(
+          "service_f0mxzxa",
+          "template_pna2jxo",
+          form.current,
+          "ASB7oYgf8SEBlff-g"
+        )
+        .then(
+          (result) => {
+            console.log(elements);
+            new Array(elements.length - 1)
+              .fill(0)
+              .forEach((i, idx) => (elements[idx].value = ""));
+            alert("메일 전송 완료!");
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
   };
 
   return (
@@ -51,15 +58,15 @@ const ContactMe = forwardRef((props, ref) => {
           <FlexDiv>
             <NameEmail>
               <Label>Name</Label>
-              <NameInput type="text" name="user_name" />
+              <NameInput type="text" name="user_name" required />
 
               <Label>Email</Label>
-              <EmailInput type="email" name="user_email" />
+              <EmailInput type="email" name="user_email" required />
             </NameEmail>
 
             <Msg>
               <Label>Message</Label>
-              <SendEamil name="message" />
+              <SendEamil name="message" required />
               <MsgBtn type="submit" value="Send Message" />
             </Msg>
           </FlexDiv>
@@ -67,7 +74,7 @@ const ContactMe = forwardRef((props, ref) => {
       </ContactBox>
     </ContactWrap>
   );
-});
+};
 
 const Msg = styled.div`
   position: relative;

@@ -4,6 +4,7 @@ import ContactMe from "../Component/contact/ContactMe";
 import { Reset } from "styled-reset";
 import { createContext } from "react";
 import { useState } from "react";
+import MyPassion from "./myPassion/MyPassion";
 
 export const UserNavContext = createContext({
   page: {
@@ -12,7 +13,7 @@ export const UserNavContext = createContext({
     portFolio: "",
   },
   setPage: () => {},
-});
+}); //형제끼리 공유할 imit state값.. 하지만 이제 쓸데가 없다.
 
 const MainPg = () => {
   const [page, setPage] = useState();
@@ -21,17 +22,12 @@ const MainPg = () => {
     setPage,
   };
 
-  const OnNavclick = () => {
-    console.log("안녕~");
-
-  
-  };
-
   return (
     <div>
       <UserNavContext.Provider value={pageDate}>
-        <Header OnNavclick={OnNavclick} />
+        <Header />
         <Content />
+        <MyPassion />
         <ContactMe />
         <Reset />
       </UserNavContext.Provider>

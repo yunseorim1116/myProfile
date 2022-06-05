@@ -5,14 +5,15 @@ import { Reset } from "styled-reset";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import store from "./reducer/store.js";
+import MyPassion from "./Component/myPassion/MyPassion.jsx";
 
 function App() {
   return (
     <>
-      {/* <MainPg /> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPg />}></Route>
+          <Route path="/mypassion" element={<MyPassion />}></Route>
         </Routes>
       </BrowserRouter>
     </>

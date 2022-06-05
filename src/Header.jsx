@@ -7,20 +7,20 @@ import { UserNavContext } from "./Component/MainPg ";
 import { useContext } from "react";
 import { useRef } from "react";
 import ContactMe from "./Component/contact/ContactMe";
+import { useSelector } from "react-redux";
+import { Navigate, useNavigate } from "react-router-dom";
 
-const Header = ({ OnNavclick }) => {
+const Header = () => {
+  const user = useSelector((state) => state);
+  const navigate = useNavigate();
   const { page } = useContext(UserNavContext);
   const contactRef = useRef();
 
+  const contactMe = document.getElementById("contact-me");
+  // const myPassion = document.getElementById("my-passion");
+
   const onClick = () => {
-    const contactMe = document.getElementById("contact-me");
-    console.log(contactMe);
-    contactMe.scrollIntoView();
-    // contactRef.current.scrollTo({
-    //   top: page.contactTop,
-    //   left: 0,
-    //   behavior: "auto",
-    // });
+    contactMe.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
