@@ -34,8 +34,8 @@ const Mbutton = styled.div`
 `;
 
 const Modalm = styled.img`
-color: #7e7e7e;
-box-shadow: 0 0 10px 5px;
+  color: #7e7e7e;
+  box-shadow: 0 0 10px 5px;
   border-radius: 4px;
   cursor: pointer;
   background-color: #fff;

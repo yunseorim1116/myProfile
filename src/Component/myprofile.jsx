@@ -15,9 +15,7 @@ const MyProfile = () => {
           바닐라js,리액트,타입스크립트,리덕스 기술등에 관심이 있습니다.
         </Intro>
 
-        <Intro>
-       멋진 프론트 엔드 개발자가 되는 것이 꿈입니다!
-        </Intro>
+        <Intro>멋진 프론트 엔드 개발자가 되는 것이 꿈입니다!</Intro>
       </div>
     </>
   );
@@ -35,6 +33,8 @@ const Intro = styled.p`
 `;
 
 const BackgroundColor = styled.img`
+  color: #a7a7a7;
+  box-shadow: 0 0 10px 5px;
   margin-top: 40px;
   opacity: 0.8;
   border-radius: 8px;

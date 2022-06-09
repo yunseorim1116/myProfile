@@ -50,9 +50,8 @@ const TitleWrap = styled.div`
 `;
 
 const Title = styled.div`
-  color: #5a5a5a;
+  color: #ffffff;
   background: linear-gradient(to right top, #434343, #595959);
-  color: transparent;
   -webkit-background-clip: text;
   margin-left: 8px;
   font-size: 35px;
@@ -68,22 +67,21 @@ const MainHeader = styled.header`
   font-family: "NotoSansKR";
 
   position: sticky;
-  background-color: #ffffff;
-
-  padding: 50px;
+  background-color: #252525;
+  box-sizing: border-box;
+  padding: 40px;
   color: #1e1e1e;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: 1px solid #f5ebeb;
 
   box-shadow: 0 6px 6px 0px #dbdbdb;
 `;
 
 const Ul = styled.ul`
   cursor: pointer;
-  color: #656565;
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 20px;
   font-weight: 700;
   margin: 5px;
   right: 1px;
@@ -92,10 +90,12 @@ const Ul = styled.ul`
   list-style: none;
 `;
 const Li = styled.ul`
+padding: 20px;
+
   &:hover {
-    background: linear-gradient(to right top, #ff6f6f, #ffa459);
-    color: transparent;
-    -webkit-background-clip: text;
+    border-bottom: 1px solid;
+
+    box-sizing: border-box;
   }
   margin: 10px;
 `;

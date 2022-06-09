@@ -73,7 +73,8 @@ const Trend = () => {
 const ContentWrap = styled.div`
   padding: 80px;
   padding-right: 450px;
-  box-shadow: 2px 1px 10px 1px #f7f7f77e, -5px -10px 10px 1px #9a9a9a7b;
+  color: #d9d9d9;
+  box-shadow: 0 0 10px 5px;
 `;
 const Red = styled.span`
   color: red;
@@ -87,12 +88,15 @@ const Span = styled.span`
   color: tomato;
 `;
 const TrendTitle = styled.h1`
+  color: #131313;
   font-family: "NotoSansKR";
   margin-bottom: 28px;
   font-size: 38px;
   font-weight: 700;
 `;
 const Trendtext = styled.li`
+  font-weight: 700;
+  color: #131313;
   cursor: pointer;
   &:hover {
     background: linear-gradient(to right top, #ff1a1a, #ffa459);
