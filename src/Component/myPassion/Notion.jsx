@@ -6,8 +6,6 @@ const Notion = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [src, setSrc] = useState();
   const onImgClick = (e) => {
-    console.log("들어오는지!!");
-    console.log("온클릭");
     setSrc(e.target.src);
     setModalOpen(!modalOpen);
   };

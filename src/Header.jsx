@@ -45,7 +45,15 @@ const Header = () => {
 
       <HederWrap>
         <Ul>
-          <Li>portfolio.</Li>
+          <Li
+            onClick={() => {
+              alert(
+                "최종 프로젝트 마감하면 추가 예정! 곧 생길거야! ( ｡˃ ᵕ ˂ )ᕤ"
+              );
+            }}
+          >
+            portfolio.
+          </Li>
           <Li onClick={onPassionClick}>My passion.</Li>
           <Li ref={contactRef} onClick={onClick}>
             Contact.
@@ -56,9 +64,7 @@ const Header = () => {
   );
 };
 
-const IconWrap = styled.div`
- 
-`;
+const IconWrap = styled.div``;
 const TitleWrap = styled.div`
   font-family: "NotoSansKR";
   font-weight: 700;

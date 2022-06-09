@@ -10,13 +10,37 @@ const GitCommit = () => {
         <TextP>이 사람은 꾸준히 잔디를 심습니다.</TextP>
 
         <TextP>형식적인 잔디 심기가 아닙니다.</TextP>
-        <TextP>사소한 코드도 commit을 하는 습관이 있습니다.</TextP>
+        <TextP>사소한 코드까지도 commit 을 하는 습관이 있습니다.</TextP>
       </div>
       <div>
-        <ContentWrap>git add .</ContentWrap>
-        <ContentWrap> git commit -m "git commit 의 신 , 서림"</ContentWrap>
-        <ContentWrap>git push origin main </ContentWrap>
-        <ContentWrap>커밋 완료~! </ContentWrap>
+        <ContentWrap
+          data-aos="fade-down"
+   
+          data-aos-duration="1500"
+        >
+          git add .
+        </ContentWrap>
+        <ContentWrap
+          data-aos="fade-down"
+    
+          data-aos-duration="1500"
+        >
+          git commit -m "git commit 파트 완료"
+        </ContentWrap>
+        <ContentWrap
+          data-aos="fade-down"
+    
+          data-aos-duration="1500"
+        >
+          git push origin main{" "}
+        </ContentWrap>
+        <ContentWrap
+          data-aos="fade-down"
+        
+          data-aos-duration="1500"
+        >
+          커밋 완료!{" "}
+        </ContentWrap>
       </div>
     </BackGround>
   );
@@ -28,7 +52,7 @@ const TextP = styled.p`
   font-family: "NotoSansKR";
 `;
 const GitCommitGreen = styled.img`
-  color: #96a4ab;
+
 
   width: 500px;
   height: 200px;
@@ -61,7 +85,8 @@ const BackGround = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 20px;
-  background-color: #b2c7d9;
+  background-color: #7baad3;
+  background: linear-gradient( 45deg, #7baad3, #669ac5 );
   margin-bottom: 120px;
 `;
 

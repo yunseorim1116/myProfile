@@ -75,11 +75,15 @@ const ContactMe = (props, ref) => {
         </form>
 
         <NotionTalk src="/img/말풍선.png" />
-        <a href="https://nifty-period-b9a.notion.site/156ce000d5084563949ce2a233916aab?v=96ae379a584b45708a8c7b60b28f5436">
-          <NotionIcon>
-            <SiNotion size="50px" color="#fff" right="0px" />
-          </NotionIcon>
-        </a>
+        {/* <a href="https://nifty-period-b9a.notion.site/156ce000d5084563949ce2a233916aab?v=96ae379a584b45708a8c7b60b28f5436"> */}
+        <NotionIcon
+          onClick={() => {
+            alert("아직 안보여줄거임 ∩(︶▽︶)∩");
+          }}
+        >
+          <SiNotion size="50px" color="#fff" right="0px" />
+        </NotionIcon>
+        {/* </a> */}
       </ContactBox>
     </ContactWrap>
   );
@@ -93,6 +97,7 @@ const NotionTalk = styled.img`
 `;
 
 const NotionIcon = styled.div`
+  cursor: pointer;
   transition: all ease 0.5s;
   &:hover {
     transform: rotate(-45deg);
