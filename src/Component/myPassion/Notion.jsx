@@ -13,29 +13,58 @@ const Notion = () => {
   };
   return (
     <ContentBox>
-      <Title>노션 정리의 달인 ! </Title>
       {modalOpen && <Modal onImgClick={onImgClick} src={src}></Modal>}
 
-      <FlexBox>
-        <MyNotion src="/img/나의페이지.png" />
-        <MyNotionTxt>
-          <MyNotionTxtP>
-            나의 노션에 대한 설명이다 나는 열정 부자애요
-          </MyNotionTxtP>
-          <MyNotionTxtP>
-            나의 노션에 대한 설명이다 나는 열정 부자애요
-          </MyNotionTxtP>
-          <MyNotionTxtP>
-            나의 노션에 대한 설명이다 나는 열정 부자애요
-          </MyNotionTxtP>
-          <MyNotionTxtP>
-            나의 노션에 대한 설명이다 나는 열정 부자애요
-          </MyNotionTxtP>
-          <MyNotionTxtP>
-            나의 노션에 대한 설명이다 나는 열정 부자애요
-          </MyNotionTxtP>
-        </MyNotionTxt>
-      </FlexBox>
+      <NotionContentBoxBack>
+        <Title>노션 정리의 달인! </Title>
+        <FlexBox>
+          <MyNotion src="/img/나의페이지.png" />
+          <div>
+            <MyNotionTxt>
+              <MyNotionTxtPTitle># 비트캠프</MyNotionTxtPTitle>
+              <MyNotionTxtP>
+                1월-3월까지의 공부 기록이 있는 노션 저장소입니다.
+                프로그래밍,자바스크립트 기초를 다지고 바닐라 js로 백엔드와
+                협업을 한 프로젝트의 과정이 담겨있습니다.
+              </MyNotionTxtP>
+
+              <br />
+              <MyNotionTxtPTitle># 패스트캠퍼스</MyNotionTxtPTitle>
+              <MyNotionTxtP>
+                4월-7월까지의 공부 기록이 있는 노션 저장소 입니다. 리액트 공부를
+                시작으로 각종 라이브러리,프레임 워크 기술들을 배우고
+                (ts,리덕스,넥스트js 등...) 기업과 협업을 한 프로젝트의 과정이
+                담겨있습니다.
+              </MyNotionTxtP>
+              <br />
+              <MyNotionTxtPTitle># 오류 || 느낀점 || 고민</MyNotionTxtPTitle>
+              <MyNotionTxtP>
+                구현을 하며 만났던 오류들,프로그래밍 동작 원리,클린 코드에 대해
+                고민하고 기록하는 과정이 담겨있습니다.
+              </MyNotionTxtP>
+              <br />
+              <MyNotionTxtPTitle># 기록하는 개발자</MyNotionTxtPTitle>
+              <MyNotionTxtP>
+                카테고리 별로 분류해 하루하루 공부한 것을 꾸준히 정리하는
+                개발자입니다.
+              </MyNotionTxtP>
+              <MyNotionTxtP>
+                오늘 하루 얻어간 그 어떤 지식도 놓치고 싶지 않아 매일 정리하고
+                기록합니다.
+              </MyNotionTxtP>
+
+              <br />
+              <MyNotionTxtPTitle># 무한한 성장 가능성</MyNotionTxtPTitle>
+              <MyNotionTxtP>
+                어제보다 오늘이 더 나은,
+                <strong>성장하는 </strong>
+                개발자 입니다.
+              </MyNotionTxtP>
+              <br />
+            </MyNotionTxt>
+          </div>
+        </FlexBox>
+      </NotionContentBoxBack>
       <NotionBox>
         <FlexBox>
           <Month>1월</Month>
@@ -61,7 +90,33 @@ const Notion = () => {
   );
 };
 
+// const WhiteBackGrount = styled.div`
+//   background-color: white;
+//   width: 80%;
+
+//   border-radius: 8px;
+// `;
+
+const NotionContentBoxBack = styled.div`
+  margin: 0px;
+  padding: 0px;
+  background-image: linear-gradient(135deg, #2f2f2f, #5e5e5e);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  padding: 20px;
+  color: white;
+`;
+
 const MyNotionTxtP = styled.div`
+  font-family: "NotoSansKR";
+  color: white;
+  margin-left: 20px;
+  margin-top: 10px;
+`;
+
+const MyNotionTxtPTitle = styled.div`
+  font-size: 20px;
+  font-family: "NotoSansKR";
+  color: white;
   margin-left: 20px;
   margin-top: 10px;
 `;
@@ -70,10 +125,11 @@ const NotionBox = styled.div`
 `;
 
 const Title = styled.div`
+  text-align: center;
   font-family: "NotoSansKR";
   margin-top: 35px;
   margin-bottom: 25px;
-  font-size: 35px;
+  font-size: 2.6rem;
   font-weight: bold;
 `;
 
@@ -84,6 +140,7 @@ const Month = styled.div`
   font-weight: bold;
 `;
 const ContentBox = styled.div`
+  transition: all 1s ease 0.1s;
   padding: 20px;
   font-family: "NotoSansKR";
   align-items: center;
@@ -99,17 +156,17 @@ const FlexBox = styled.div`
 `;
 
 const MyNotion = styled.img`
-  color: #dcdcdc;
+  color: #101010;
+  /* box-shadow: 0 0 10px 5px; */
   box-shadow: 0 0 10px 5px;
-  cursor: pointer;
   width: 15vw;
   margin-top: 40px;
-  opacity: 0.8;
+  margin-right: 20px;
+
   border-radius: 8px;
 `;
 
 const MyNotionTxt = styled.div`
-  cursor: pointer;
   margin-top: 50px;
   opacity: 0.8;
   border-radius: 8px;

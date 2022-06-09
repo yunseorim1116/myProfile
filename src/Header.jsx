@@ -10,12 +10,16 @@ import ContactMe from "./Component/contact/ContactMe";
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router-dom";
 
+import { BsGithub } from "react-icons/bs";
+
 const Header = () => {
   const user = useSelector((state) => state);
   const navigate = useNavigate();
   const { page } = useContext(UserNavContext);
   const contactRef = useRef();
-
+  const onGitClick = () => {
+    console.log("깃헙");
+  };
   const contactMe = document.getElementById("contact-me");
   // const myPassion = document.getElementById("my-passion");
 
@@ -26,7 +30,10 @@ const Header = () => {
   return (
     <MainHeader>
       <TitleWrap>
-        <FontAwesomeIcon icon={faHeart} color="rgb(255, 121, 121)" />
+        <a href="https://github.com/yunseorim1116">
+         
+          <BsGithub size="24" color="#fff" onClick={onGitClick} />
+        </a>
         <Title>Seorim's portfolio</Title>
       </TitleWrap>
 
@@ -67,7 +74,7 @@ const MainHeader = styled.header`
   font-family: "NotoSansKR";
 
   position: sticky;
-  background-color: #252525;
+  background-color: #333333;
   box-sizing: border-box;
   padding: 40px;
   color: #1e1e1e;
@@ -90,7 +97,7 @@ const Ul = styled.ul`
   list-style: none;
 `;
 const Li = styled.ul`
-padding: 20px;
+  padding: 20px;
 
   &:hover {
     border-bottom: 1px solid;

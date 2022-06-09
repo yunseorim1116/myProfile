@@ -3,6 +3,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { Navigate, useNavigate } from "react-router-dom";
 
+import TypeIt from "./TypeIt";
+
 const Trend = () => {
   const navigate = useNavigate();
   const onClick = (id) => {
@@ -33,9 +35,8 @@ const Trend = () => {
   return (
     <>
       <ContentWrap>
-        <TrendTitle>
-          실시간 <Span style>Trend</Span>
-        </TrendTitle>
+        <TypeIt />
+
         <ul>
           {data.map((ele) => {
             if (ele.type == "상승") {

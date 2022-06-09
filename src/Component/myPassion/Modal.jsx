@@ -47,6 +47,8 @@ const Modalm = styled.img`
   z-index: 100;
 `;
 
-const ModalContainer = styled.div``;
+const ModalContainer = styled.div`
+ transition:all 1s ease .1s;   
+`;
 
 export default Modal;
