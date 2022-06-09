@@ -5,6 +5,7 @@ import { Reset } from "styled-reset";
 import { createContext } from "react";
 import { useState } from "react";
 import MyPassion from "./myPassion/MyPassion";
+import "./index.css";
 
 export const UserNavContext = createContext({
   page: {

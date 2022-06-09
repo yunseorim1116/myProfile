@@ -21,26 +21,32 @@ const Header = () => {
     console.log("깃헙");
   };
   const contactMe = document.getElementById("contact-me");
+  const myPassion = document.getElementById("my-passion");
   // const myPassion = document.getElementById("my-passion");
 
   const onClick = () => {
     contactMe.scrollIntoView({ behavior: "smooth" });
   };
 
+  const onPassionClick = () => {
+    myPassion.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <MainHeader>
       <TitleWrap>
-        <a href="https://github.com/yunseorim1116">
-         
-          <BsGithub size="24" color="#fff" onClick={onGitClick} />
-        </a>
+        <IconWrap>
+          <a href="https://github.com/yunseorim1116">
+            <BsGithub size="24" color="#fff" onClick={onGitClick} />
+          </a>
+        </IconWrap>
         <Title>Seorim's portfolio</Title>
       </TitleWrap>
 
       <HederWrap>
         <Ul>
           <Li>portfolio.</Li>
-          <Li>My passion.</Li>
+          <Li onClick={onPassionClick}>My passion.</Li>
           <Li ref={contactRef} onClick={onClick}>
             Contact.
           </Li>
@@ -50,6 +56,9 @@ const Header = () => {
   );
 };
 
+const IconWrap = styled.div`
+ 
+`;
 const TitleWrap = styled.div`
   font-family: "NotoSansKR";
   font-weight: 700;

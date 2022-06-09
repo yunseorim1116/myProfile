@@ -6,6 +6,8 @@ import { useContext } from "react";
 import { UserNavContext } from "../MainPg ";
 import { useState } from "react";
 
+import { SiNotion } from "react-icons/si";
+
 const ContactMe = (props, ref) => {
   let form = useRef();
 
@@ -71,10 +73,34 @@ const ContactMe = (props, ref) => {
             </Msg>
           </FlexDiv>
         </form>
+
+        <NotionTalk src="/img/말풍선.png" />
+        <a href="https://nifty-period-b9a.notion.site/156ce000d5084563949ce2a233916aab?v=96ae379a584b45708a8c7b60b28f5436">
+          <NotionIcon>
+            <SiNotion size="50px" color="#fff" right="0px" />
+          </NotionIcon>
+        </a>
       </ContactBox>
     </ContactWrap>
   );
 };
+
+const NotionTalk = styled.img`
+  width: 300px;
+  position: absolute;
+  top: 230px;
+  right: 20px;
+`;
+
+const NotionIcon = styled.div`
+  transition: all ease 0.5s;
+  &:hover {
+    transform: rotate(-45deg);
+  }
+  height: 50px;
+  position: absolute;
+  right: -20px;
+`;
 
 const Msg = styled.div`
   position: relative;
@@ -176,11 +202,13 @@ const ContactBox = styled.div`
 `;
 
 const ContactWrap = styled.div`
+  overflow-x: hidden;
+  max-width: 100%;
   font-family: "NotoSansKR";
   position: relative;
 
   background: linear-gradient(45deg, #4a4a4a, #4b4b4b);
-  width: 100%;
+
   height: 500px;
 `;
 

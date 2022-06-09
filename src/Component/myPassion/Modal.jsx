@@ -34,6 +34,7 @@ const Mbutton = styled.div`
 `;
 
 const Modalm = styled.img`
+  width: 1400px;
   color: #7e7e7e;
   box-shadow: 0 0 10px 5px;
   border-radius: 4px;
@@ -48,7 +49,7 @@ const Modalm = styled.img`
 `;
 
 const ModalContainer = styled.div`
- transition:all 1s ease .1s;   
+  transition: all 1s ease 0.1s;
 `;
 
 export default Modal;

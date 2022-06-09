@@ -3,13 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faSearch } from "@fortawesome/free-solid-svg-icons";
 import styled, { css } from "styled-components";
 
-// useEffect(() => {
-//   //데이터 받기 .. 보류 경로를 못찾겠어어
-//   fetch("./data.json")
-//     .then((response) => response.json())
-//     .then((data) => console.log(data));
-// }, []);
-
 const SearchInput = () => {
   const data = [
     { id: 1, content: "깃 commit의 신", type: "상승" },
