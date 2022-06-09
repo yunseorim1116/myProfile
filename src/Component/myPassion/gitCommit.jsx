@@ -12,7 +12,12 @@ const GitCommit = () => {
         <TextP>형식적인 잔디 심기가 아닙니다.</TextP>
         <TextP>사소한 코드도 commit을 하는 습관이 있습니다.</TextP>
       </div>
-      <ContentWrap>커밋 완료~</ContentWrap>;
+      <div>
+        <ContentWrap>git add .</ContentWrap>
+        <ContentWrap> git commit -m "git commit 의 신 , 서림"</ContentWrap>
+        <ContentWrap>git push origin main </ContentWrap>
+        <ContentWrap>커밋 완료~! </ContentWrap>
+      </div>
     </BackGround>
   );
 };
@@ -61,22 +66,25 @@ const BackGround = styled.div`
 `;
 
 const ContentWrap = styled.div`
-  margin-top: 40px;
-  margin-left: 20px;
+  font-weight: 700;
+  color: #232323;
+  font-family: "NotoSansKR";
+  padding: 10px;
+  margin-top: 5px;
+  text-align: center;
   clip-path: polygon(
     0% 0%,
     100% 0%,
-    100% 75%,
-    84% 75%,
-    84% 84%,
-    63% 75%,
-    0% 75%
+    100% 35%,
+    84% 35%,
+    88% 46%,
+    75% 35%,
+    0 35%
   );
-
   background-color: #ffeb33;
 
-  width: 50vw;
-  height: 500px;
+  width: 20vw;
+  height: 100px;
 `;
 
 export default GitCommit;
