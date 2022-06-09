@@ -24,7 +24,7 @@ const Notion = () => {
           />
           <div>
             <MyNotionTxt>
-              <MyNotionTxtPTitle># 비트캠프</MyNotionTxtPTitle>
+              <MyNotionTxtPTitle># </MyNotionTxtPTitle>
               <MyNotionTxtP>
                 1월-3월까지의 공부 기록이 있는 노션 저장소입니다.
                 프로그래밍,자바스크립트 기초를 다지고 바닐라 js로 백엔드와
@@ -159,6 +159,11 @@ const FlexBox = styled.div`
 `;
 
 const MyNotion = styled.img`
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
   color: #101010;
   /* box-shadow: 0 0 10px 5px; */
   /* box-shadow: 0 0 10px 5px; */
@@ -176,6 +181,11 @@ const MyNotionTxt = styled.div`
 `;
 
 const BackgroundColor = styled.img`
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
   color: #dcdcdc;
   box-shadow: 0 0 10px 5px;
   cursor: pointer;

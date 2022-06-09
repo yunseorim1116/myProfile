@@ -34,6 +34,11 @@ const Mbutton = styled.div`
 `;
 
 const Modalm = styled.img`
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
   width: 1400px;
   color: #7e7e7e;
   box-shadow: 0 0 10px 5px;
