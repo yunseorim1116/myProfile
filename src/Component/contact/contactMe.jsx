@@ -86,7 +86,7 @@ const ContactMe = (props, ref) => {
 };
 
 const NotionTalk = styled.img`
-  width: 300px;
+  width: 250px;
   position: absolute;
   top: 230px;
   right: 20px;

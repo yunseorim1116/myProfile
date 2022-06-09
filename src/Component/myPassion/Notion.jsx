@@ -18,7 +18,12 @@ const Notion = () => {
       <NotionContentBoxBack>
         <Title>노션 정리의 달인! </Title>
         <FlexBox>
-          <MyNotion src="/img/나의페이지.png" />
+          <MyNotion
+            src="/img/나의페이지.png"
+            data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+          />
           <div>
             <MyNotionTxt>
               <MyNotionTxtPTitle># 비트캠프</MyNotionTxtPTitle>
@@ -158,7 +163,7 @@ const FlexBox = styled.div`
 const MyNotion = styled.img`
   color: #101010;
   /* box-shadow: 0 0 10px 5px; */
-  box-shadow: 0 0 10px 5px;
+  /* box-shadow: 0 0 10px 5px; */
   width: 15vw;
   margin-top: 40px;
   margin-right: 20px;

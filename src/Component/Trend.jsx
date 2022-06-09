@@ -2,10 +2,16 @@ import React from "react";
 
 import styled, { css } from "styled-components";
 import { Navigate, useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 import TypeIt from "./TypeIt";
 
 const Trend = () => {
+  useEffect(() => {
+    AOS.init();
+  });
   const navigate = useNavigate();
   const onClick = (id) => {
     const contactMe = document.getElementById(`${id}`);
@@ -34,7 +40,11 @@ const Trend = () => {
 
   return (
     <>
-      <ContentWrap>
+      <ContentWrap
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
+      >
         <TypeIt />
 
         <ul>
