@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 const Modal = ({ onImgClick, src }) => {
-  console.log("모달창으로 들어오 ㄴ");
-  console.log(src);
-
   return (
     <ModalContainer className="modal__container">
       <ModalBox onClick={onImgClick}>
-        <Modalm className="modal" src={`${src}`}></Modalm>
+        <Modalm
+          className="modal"
+          src={`${src}`}
+          onClick={(e) => e.stopPropagation()}
+        ></Modalm>
       </ModalBox>
     </ModalContainer>
   );
@@ -30,11 +31,11 @@ const Mbutton = styled.div`
   font-weight: 700;
   right: 0px;
   margin-top: 2.6042vw;
-  margin-right: 6.2500vw;
+  margin-right: 6.25vw;
 `;
 
 const Modalm = styled.img`
-  width: 1400px;
+  width: 80.2222vw;
   color: #7e7e7e;
   box-shadow: 0 0 10px 5px;
   border-radius: 4px;

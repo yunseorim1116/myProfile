@@ -3,11 +3,14 @@ import styled from "styled-components";
 import Modal from "./Modal";
 
 const Notion = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false); //모달 오픈하기 위해
+  //불리언 타입으로 만들어준다..
+  //false면 모달 안보이고 true면 모달을 보여준다.
+  //클릭하면 ture를 다시 false로 만들어 모달을 닫아준다.
   const [src, setSrc] = useState();
   const onImgClick = (e) => {
-    setSrc(e.target.src);
-    setModalOpen(!modalOpen);
+    setSrc(e.target.src); //src저장한뒤
+    setModalOpen(!modalOpen);//클릭하면 반대로 돌려돌려~~
   };
   return (
     <ContentBox>
