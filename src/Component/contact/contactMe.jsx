@@ -74,7 +74,7 @@ const ContactMe = (props, ref) => {
           </FlexDiv>
         </form>
 
-        <NotionTalk src="/img/말풍선.png" />
+        <NotionTalk src={`${process.env.PUBLIC_URL}/img/말풍선.png`} />
         {/* <a href="https://nifty-period-b9a.notion.site/156ce000d5084563949ce2a233916aab?v=96ae379a584b45708a8c7b60b28f5436"> */}
         <NotionIcon
           onClick={() => {

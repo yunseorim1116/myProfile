@@ -5,7 +5,7 @@ const MyProfile = () => {
   return (
     <>
       <div>
-        <BackgroundColor src="/img/1.jpg"></BackgroundColor>
+        <BackgroundColor src={`${process.env.PUBLIC_URL}/img/1.jpg`} ></BackgroundColor>
         <IntroTitle>안녕하세요 !</IntroTitle>
         <Intro>
           자바스립트를 누구보다도 사랑하는 개발 연습생 윤서림 입니다.
@@ -24,8 +24,8 @@ const MyProfile = () => {
 const IntroTitle = styled.p`
   font-family: "NotoSansKR";
   font-weight: 700;
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 1.0417vw;
+  margin-top: 1.0417vw;
 `;
 const Intro = styled.p`
   font-family: "NotoSansKR";
@@ -34,12 +34,12 @@ const Intro = styled.p`
 
 const BackgroundColor = styled.img`
   color: #a7a7a7;
-  box-shadow: 0 0 10px 5px;
-  margin-top: 40px;
+  box-shadow: 0 0 0.5208vw 0.2604vw;
+  margin-top: 2.0833vw;
   opacity: 0.8;
-  border-radius: 8px;
-  max-width: 500px;
-  height: 360px;
+  border-radius: 0.4167vw;
+  max-width: 26.0417vw;
+  height: 18.7500vw;
 `;
 
 export default MyProfile;

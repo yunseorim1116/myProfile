@@ -14,7 +14,7 @@ import { BsGithub } from "react-icons/bs";
 
 const Header = () => {
   const user = useSelector((state) => state);
-  const navigate = useNavigate();
+
   const { page } = useContext(UserNavContext);
   const contactRef = useRef();
   const onGitClick = () => {
@@ -103,23 +103,24 @@ const MainHeader = styled.header`
 const Ul = styled.ul`
   cursor: pointer;
   color: #ffffff;
-  font-size: 20px;
+
   font-weight: 700;
-  margin: 5px;
-  right: 1px;
+  font-size: 1.0417vw;
+  margin: 0.2604vw;
+  right: 0.0521vw;
   display: flex;
   text-decoration: none;
   list-style: none;
 `;
 const Li = styled.ul`
-  padding: 20px;
+  padding: 1.0417vw;
 
   &:hover {
     border-bottom: 1px solid;
 
     box-sizing: border-box;
   }
-  margin: 10px;
+  margin: 0.5208vw;
 `;
 
 export default Header;

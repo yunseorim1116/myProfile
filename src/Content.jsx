@@ -8,7 +8,6 @@ const Content = () => {
   return (
     <>
       <SearchInput />
-  
 
       <ContentWrap>
         <Trend />
@@ -20,10 +19,10 @@ const Content = () => {
 
 const ContentWrap = styled.div`
   font-family: "Ubuntu";
-  padding-top: 100px;
+  padding-top: 5.2083vw;
+  padding-bottom: 5.2083vw;
   display: flex;
   justify-content: space-around;
-  padding-bottom: 100px;
 `;
 
 export default Content;

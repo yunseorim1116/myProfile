@@ -6,39 +6,23 @@ const GitCommit = () => {
     <BackGround>
       <div>
         <Title>Git Commit의 신!</Title>
-        <GitCommitGreen src="/img/잔디.png" />
+        <GitCommitGreen src={`${process.env.PUBLIC_URL}/img/잔디.png`} />
         <TextP>이 사람은 꾸준히 잔디를 심습니다.</TextP>
 
         <TextP>형식적인 잔디 심기가 아닙니다.</TextP>
         <TextP>사소한 코드까지도 commit 을 하는 습관이 있습니다.</TextP>
       </div>
       <div>
-        <ContentWrap
-          data-aos="fade-down"
-   
-          data-aos-duration="1500"
-        >
+        <ContentWrap data-aos="fade-down" data-aos-duration="1500">
           git add .
         </ContentWrap>
-        <ContentWrap
-          data-aos="fade-down"
-    
-          data-aos-duration="1500"
-        >
+        <ContentWrap data-aos="fade-down" data-aos-duration="1500">
           git commit -m "git commit 파트 완료"
         </ContentWrap>
-        <ContentWrap
-          data-aos="fade-down"
-    
-          data-aos-duration="1500"
-        >
+        <ContentWrap data-aos="fade-down" data-aos-duration="1500">
           git push origin main{" "}
         </ContentWrap>
-        <ContentWrap
-          data-aos="fade-down"
-        
-          data-aos-duration="1500"
-        >
+        <ContentWrap data-aos="fade-down" data-aos-duration="1500">
           커밋 완료!{" "}
         </ContentWrap>
       </div>
@@ -47,25 +31,22 @@ const GitCommit = () => {
 };
 
 const TextP = styled.p`
-  margin-top: 10px;
+  margin-top: 0.5208vw;
   font-weight: 700;
   font-family: "NotoSansKR";
 `;
 const GitCommitGreen = styled.img`
-
-
-  width: 500px;
-  height: 200px;
+  width: 26.0417vw;
+  height: 10.4167vw;
   border-radius: 8px;
 `;
 
 const Title = styled.div`
-  font-size: 35px;
   color: white;
-  margin-bottom: 40px;
-  margin-top: 20px;
-
-  height: 50px;
+  font-size: 1.8229vw;
+  margin-bottom: 2.0833vw;
+  margin-top: 1.0417vw;
+  height: 2.6042vw;
   position: relative;
   z-index: 1;
 
@@ -81,21 +62,21 @@ const Title = styled.div`
 `;
 
 const BackGround = styled.div`
-  margin-top: 80px;
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 1.0417vw;
+  margin-top: 4.1667vw;
+  margin-bottom: 6.2500vw;
   background-color: #7baad3;
-  background: linear-gradient( 45deg, #7baad3, #669ac5 );
-  margin-bottom: 120px;
+  background: linear-gradient(45deg, #7baad3, #669ac5);
 `;
 
 const ContentWrap = styled.div`
   font-weight: 700;
   color: #232323;
   font-family: "NotoSansKR";
-  padding: 10px;
-  margin-top: 5px;
+  padding: 0.5208vw;
+  margin-top: 0.2604vw;
   text-align: center;
   clip-path: polygon(
     0% 0%,
@@ -109,7 +90,7 @@ const ContentWrap = styled.div`
   background-color: #ffeb33;
 
   width: 20vw;
-  height: 100px;
+  height: 5.2083vw;
 `;
 
 export default GitCommit;

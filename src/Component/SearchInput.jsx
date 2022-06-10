@@ -105,7 +105,7 @@ const SearchInput = () => {
 };
 
 const DivBox = styled.div`
-  margin-top: 2px;
+  margin-top: 0.1042vw;
   text-align: center;
 `;
 
@@ -114,18 +114,18 @@ const hasNotDate = styled.p`
 `;
 
 const showSearch = styled.span`
-  padding: 10px;
+  padding: 0.5208vw;
   color: red;
 `;
 
 const ItemWrap = styled.div`
-  margin-left: 5px;
+  margin-left: 0.2604vw;
 `;
 
 const Button = styled.button`
   position: absolute;
-  right: 10px;
-  margin-top: -10px;
+  right: 0.5208vw;
+  margin-top: -0.5208vw;
   border: none;
   background-color: white;
   cursor: pointer;
@@ -137,7 +137,7 @@ const SearchButton = styled.div``;
 const ContentBox = styled.div`
   font-family: "Ubuntu";
   box-sizing: border-box;
-  padding: 30px;
+  padding: 1.5625vw;
 `;
 
 const SearchWrap = styled.form`
@@ -146,17 +146,18 @@ const SearchWrap = styled.form`
   display: flex;
   justify-content: space-between;
   margin: auto;
-  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
-  max-width: 584px;
-  border-radius: 24px;
+  box-shadow: 0 0.0521vw 0.3125vw rgb(32 33 36 / 28%);
+  max-width: 30.4167vw;
+  border-radius: 1.25vw;
   background: #fff;
   border: 1px solid #dfe1e5;
-  margin-top: 50px;
+  margin-top: 2.6042vw;
 `;
 const SearchInputTag = styled.input`
-  padding: 5px;
+  padding: 0.2604vw;
+  margin: 0.4167vw;
   border: none;
-  margin: 8px;
+
   outline: none;
 `;
 

@@ -29,7 +29,7 @@ const Title = styled.div`
   text-align: center;
   font-weight: bold;
   font-family: "NotoSansKR";
-  font-size: 50px;
+  font-size: 2.6042vw;
 `;
 
 export default MyPassion;

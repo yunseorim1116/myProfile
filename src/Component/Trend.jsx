@@ -7,12 +7,25 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 import TypeIt from "./TypeIt";
-
+//   window.location.href = "https://catleaps.netlify.app/";
 const Trend = () => {
   useEffect(() => {
     AOS.init();
   });
-  const navigate = useNavigate();
+
+  const goToAlink = (el) => {
+    switch (el.game) {
+      case "cat-leaf":
+        window.location.href = "https://catleaps.netlify.app/";
+        break;
+      case "base-ball":
+        window.location.href = "https://fluffy-crumble-3020bf.netlify.app/";
+        break;
+      default:
+        alert("더 보충해올게.. I love js...peace ✿˘◡˘✿");
+    }
+  };
+
   const onClick = (id) => {
     const contactMe = document.getElementById(`${id}`);
     contactMe.scrollIntoView({ behavior: "smooth" });
@@ -23,8 +36,14 @@ const Trend = () => {
       id: 2,
       content: "요즘 제일 Hot하다는 깻잎논쟁 테스트 제작자",
       type: "상승",
+      game: "cat-leaf",
     },
-    { id: 3, content: "야구게임 만들기! 바닐라 js + 리액트", type: "상승" },
+    {
+      id: 3,
+      content: "야구게임 만들기! 바닐라 js + 리액트",
+      type: "상승",
+      game: "base-ball",
+    },
     {
       id: 4,
       content: "크림 인스타그램 클론코딩, 싱크로율 99.9%!",
@@ -53,9 +72,7 @@ const Trend = () => {
               return (
                 <Trendtext
                   key={ele.id}
-                  onClick={() => {
-                    onClick(ele.id);
-                  }}
+                  onClick={() => goToAlink(ele)}
                   id={ele.id}
                 >
                   {ele.content} <Red>▲</Red> {Math.floor(Math.random() * 100)}
@@ -63,13 +80,13 @@ const Trend = () => {
               );
             } else if (ele.type == "new") {
               return (
-                <Trendtext key={ele.id}>
+                <Trendtext key={ele.id} onClick={() => goToAlink(ele)}>
                   {ele.content} <Red>new!</Red>{" "}
                 </Trendtext>
               );
             } else {
               return (
-                <Trendtext key={ele.id}>
+                <Trendtext key={ele.id} onClick={() => goToAlink(ele)}>
                   {ele.content} <Blue>▼</Blue> {Math.floor(Math.random() * 100)}
                 </Trendtext>
               );
@@ -82,10 +99,10 @@ const Trend = () => {
 };
 
 const ContentWrap = styled.div`
-  padding: 80px;
-  padding-right: 450px;
+  padding: 4.1667vw;
+  padding-right: 23.4375vw;
+  box-shadow: 0 0 0.5208vw 0.2604vw;
   color: #d9d9d9;
-  box-shadow: 0 0 10px 5px;
 `;
 const Red = styled.span`
   color: red;
@@ -101,8 +118,8 @@ const Span = styled.span`
 const TrendTitle = styled.h1`
   color: #131313;
   font-family: "NotoSansKR";
-  margin-bottom: 28px;
-  font-size: 38px;
+  margin-bottom: 1.4583vw;
+  font-size: 1.9792vw;
   font-weight: 700;
 `;
 const Trendtext = styled.li`
@@ -117,6 +134,6 @@ const Trendtext = styled.li`
     border-bottom: 2px solid;
   }
   font-family: "NotoSansKR";
-  margin-bottom: 20px;
+  margin-bottom: 1.0417vw;
 `;
 export default Trend;

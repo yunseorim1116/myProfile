@@ -25,20 +25,15 @@ const ModalBox = styled.div`
 const Mbutton = styled.div`
   cursor: pointer;
   z-index: 101;
-  font-size: 30px;
+  font-size: 1.5625vw;
   position: absolute;
   font-weight: 700;
   right: 0px;
-  margin-top: 50px;
-  margin-right: 120px;
+  margin-top: 2.6042vw;
+  margin-right: 6.2500vw;
 `;
 
 const Modalm = styled.img`
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
   width: 1400px;
   color: #7e7e7e;
   box-shadow: 0 0 10px 5px;
